@@ -4,7 +4,7 @@ const ItemCount = ({stock}) => {
     const [counter, setCounter] = useState (1);
     
     const decrementarStock = () => {
-        if(counter >0) {
+        if(counter > 1) {
         setCounter (counter - 1);
         }
     }
