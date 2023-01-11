@@ -1,15 +1,28 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import arrayProductos from "./json/productos.json";
+import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
+
 
 const ItemListContainer = () => {
+    const [items, setItems] = useState ([]);
+    const {id} = useParams ();
+
+    useEffect(() => {
+        const promesa = new Promise ((resolve, reject) => {
+            setTimeout (() => { 
+                resolve (id ? arrayProductos.filter (item => item.categoria === id) : arrayProductos);
+            }, 2000);   
+        });
+        promesa.then((data)=> {
+            setItems(data); 
+        })
+    }); [id];
+
+
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="alert alert-warning text-center" role= "alert">
-                        {greeting}
-                    </div>
-                </div>
-            </div>
+            <ItemList items ={items} />
         </div>
     )
 }
