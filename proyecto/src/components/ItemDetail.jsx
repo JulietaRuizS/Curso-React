@@ -1,20 +1,32 @@
-import React from "react";
-import ItemCount from "./ItemCount";
+import React, { useEffect, useState } from "react";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
+import Loading from "./Loading";
 
-const ItemDetail = ({item}) => {
+const ItemDetailContainer = () => {
+    const [item, setItem] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const {id} = useParams();
+
+    useEffect(() => {
+        const db = getFirestore();
+        const item = doc(db, "items", id);
+        getDoc(item).then((snapShot) => {
+            if (snapShot.exists()) {
+                setItem({id:snapShot.id, ...snapShot.data()});
+                setLoading(false);
+            } else {
+                console.log("El Producto No Existe!");
+            }
+        });
+    }, [id]);
+
     return (
-        <div className="row">
-            <div className="col-md-4 offset-md-2">
-                <img src={item.imagen} alt={item.nombre} className="img-fluid" />
-            </div>
-            <div className="col-md-4">
-                <h1>{item.nombre}</h1>
-                <p>{item.detalles}</p>
-                <p><b>${item.precio}</b></p>
-                <ItemCount stock={item.stock} />
-            </div>
+        <div className="container my-5">
+            {loading ? <Loading /> : <ItemDetail item={item} />}
         </div>
     )
 }
 
-export default ItemDetail;
+export default ItemDetailContainer;
