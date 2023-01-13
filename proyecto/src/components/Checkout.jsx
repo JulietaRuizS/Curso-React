@@ -2,7 +2,7 @@ import { addDoc, doc, collection, getFirestore, writeBatch, getDoc } from "fireb
 import React, { useContext } from "react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { CartContext } from "./context/CartContext";
+import { CartContext } from "./Context/CartContext";
 
 const Checkout = () => {
     const {cart, clear, sumTotal} = useContext(CartContext);

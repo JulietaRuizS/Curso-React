@@ -11,7 +11,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const db = getFirestore();
-        const itemsCollection = collection(db, "items");
+        const itemsCollection = collection(db, "productos");
         const q = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
         
         getDocs(q).then((snapShot) => {

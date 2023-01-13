@@ -1,9 +1,0 @@
-
-[
-    {"id": 1, "nombre":"Cuchillo acero quirurgico","descripcion": "lorem", "imagen": "../public/images/cuchillo 1.jpg", "precio": 1680, "stock": 15},
-    {"id": 2, "nombre":"Cuchillo acero","descripcion": "lorem", "imagen": "../public/images/cuchillo 2.jpg", "precio": 1920, "stock": 15},
-    {"id": 3, "nombre":"Cuchillo ","descripcion": "lorem", "imagen": "../public/images/cuchillo 3.jpg", "precio": 2100, "stock": 15} 
-    
-
-
-]
