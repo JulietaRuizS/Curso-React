@@ -1,4 +1,7 @@
 # Curso-React
-Proyecto Final Curso React CoderHouse
 
-E-Commerce de cuchilleria argentina Artesanal.
+
+
+E- commerce de cuchilleria artesanal Argentina
+
+Proyecto Final Curso React CoderHouse

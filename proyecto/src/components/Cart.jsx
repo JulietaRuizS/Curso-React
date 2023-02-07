@@ -10,8 +10,8 @@ const Cart = () => {
             <div className="container">
                 <div className="row my-5">
                     <div className="col-md-12 text-center">
-                        <div className="alert alert-danger" role="alert">No se encontraron Productos en el Carrito!</div>
-                        <Link to={"/"} className="btn btn-warning">Volver a la Página Principal</Link>
+                        <div className="alert alert-danger" role="alert">No se encontraron productos en el Carrito</div>
+                        <Link to={"/"} className="btn btn-warning">Volver a la página principal</Link>
                     </div>
                 </div>
             </div>

@@ -55,7 +55,7 @@ const Checkout = () => {
                             <label for="email" className="form-label">Email</label>
                             <input type="text" className="form-control" id="email" placeholder="Ingrese su Email" onInput={(e) => {setEmail(e.target.value)}} />
                         </div>
-                        <button type="button" className="btn btn-warning" onClick={generarOrden}>Generar Orden</button>
+                        <button type="button" className="btn btn-warning" onClick={Pedir}>Pedir</button>
                     </form>
                 </div>
                 <div className="col-md-6">
@@ -77,11 +77,6 @@ const Checkout = () => {
                             </tr>
                         </tbody>
                     </table>    
-                </div>
-            </div>
-            <div className="row">
-                <div className="col text-center">
-                    {orderId !== "" ? <Navigate to={"/thankyou/" + orderId} /> : ""}
                 </div>
             </div>
         </div>
